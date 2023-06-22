@@ -11,8 +11,10 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<div id="container">
 	<main>
 		<jsp:include page="calender.jsp" />
 	</main>
+	</div>
 </body>
 </html>

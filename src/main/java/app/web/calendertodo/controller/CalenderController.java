@@ -1,5 +1,8 @@
 package app.web.calendertodo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,9 +23,10 @@ public class CalenderController {
 
 		DateDataModel dataModel = new DateDataModel();
 
-		calenderView.CreateCalender(2023, 7, dataModel);
+		List<ArrayList<DateDataModel>> calendar = calenderView.CreateCalendar(2023, 5, dataModel);
 
 		model.addAttribute("dateDataModel", dataModel);
+		model.addAttribute("calendar", calendar);
 
 		return "/top";
 	}

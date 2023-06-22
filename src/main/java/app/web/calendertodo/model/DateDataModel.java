@@ -8,6 +8,7 @@ public class DateDataModel implements Serializable {
 	private int thisDay;
 	private String thisWeek;
 
+
 	public int getThisYear() {
 		return thisYear;
 	}
