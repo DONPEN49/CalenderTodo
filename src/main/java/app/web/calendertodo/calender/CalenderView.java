@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import app.web.calendertodo.model.DateDataModel;
+import app.web.calendertodo.model.CalendarModel;
 
 @Component
 public class CalenderView {
@@ -20,7 +20,7 @@ public class CalenderView {
 	}
 
 	//カレンダーリスト作成
-	public List<ArrayList<DateDataModel>> CreateCalendar(int year, int month, DateDataModel dataModel) {
+	public List<ArrayList<CalendarModel>> CreateCalendar(int year, int month, CalendarModel dataModel) {
 
 		String[] weeks= {"日","月","火","水","木","金","土"};
 
@@ -30,13 +30,13 @@ public class CalenderView {
 		//行列に日代入
 		calcFields();
 
-		List<ArrayList<DateDataModel>> calenderList = new ArrayList<ArrayList<DateDataModel>>();
+		List<ArrayList<CalendarModel>> calenderList = new ArrayList<ArrayList<CalendarModel>>();
 
 		//リストに代入
 		for(int y = 0; y < calenderMatrix.length; y++) {
-			ArrayList<DateDataModel> dateList = new ArrayList<DateDataModel>();
+			ArrayList<CalendarModel> dateList = new ArrayList<CalendarModel>();
 			for(int x = 0; x < calenderMatrix[y].length; x++) {
-				DateDataModel model = new DateDataModel();
+				CalendarModel model = new CalendarModel();
 				model.setThisDay(calenderMatrix[y][x]);
 				if(y == 0) {
 					model.setThisWeek(weeks[x]);

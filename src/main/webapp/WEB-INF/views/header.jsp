@@ -10,8 +10,8 @@
 			</div>
 			<div class="date">
 				<h3>
-					<c:out value="${dateDataModel.thisYear }年"></c:out>
-					<c:out value="${dateDataModel.thisMonth }月"></c:out>
+					<c:out value="${calendarModel.thisYear }年"></c:out>
+					<c:out value="${calendarModel.thisMonth }月"></c:out>
 				</h3>
 			</div>
 			<div>

@@ -3,34 +3,26 @@ package app.web.calendertodo.model;
 import java.io.Serializable;
 
 public class DateDataModel implements Serializable {
-	private int thisYear;
-	private int thisMonth;
-	private int thisDay;
-	private String thisWeek;
+	private String title;
+	private String content;
+	private String thisDate;
 
-
-	public int getThisYear() {
-		return thisYear;
+	public String getTitle() {
+		return title;
 	}
-	public void setThisYear(int thisYear) {
-		this.thisYear = thisYear;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public int getThisMonth() {
-		return thisMonth;
+	public String getContent() {
+		return content;
 	}
-	public void setThisMonth(int thisMonth) {
-		this.thisMonth = thisMonth;
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public int getThisDay() {
-		return thisDay;
+	public String getThisDate() {
+		return thisDate;
 	}
-	public void setThisDay(int thisDay) {
-		this.thisDay = thisDay;
-	}
-	public String getThisWeek() {
-		return thisWeek;
-	}
-	public void setThisWeek(String thisWeek) {
-		this.thisWeek = thisWeek;
+	public void setThisDate(String thisDate) {
+		this.thisDate = thisDate;
 	}
 }
