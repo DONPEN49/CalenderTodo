@@ -14,6 +14,84 @@ main {
 	margin-right: auto;
 }
 
+/*** ヘッダー ***/
+.right_arrow {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.right_arrow::before { /* 背景の表示設定 */
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 25px; /* 横幅 */
+  height: 25px; /* 高さ */
+  border-radius: 50%; /* 角の丸み */
+  background: #cccccc;
+}
+
+.right_arrow::after { /* くの字の表示設定 */
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transform: rotate(45deg);
+}
+
+.left_arrow {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.left_arrow::before { /* 背景の表示設定 */
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 25px; /* 横幅 */
+  height: 25px; /* 高さ */
+  border-radius: 50%; /* 角の丸み */
+  background: #cccccc;
+}
+
+.left_arrow::after { /* くの字の表示設定 */
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transform: rotate(225deg);
+}
+
+.header {
+	display: inline-grid;
+	grid-template-columns: 30px 200px 30px;
+	grid-template-rows: 70px;
+}
+
+.date {
+
+}
+
+/*** カレンダー ***/
 #container {
 
 }
@@ -40,3 +118,4 @@ main {
 .day:nth-child(even) {
 	background-color:#dfdfdf;
 }
+

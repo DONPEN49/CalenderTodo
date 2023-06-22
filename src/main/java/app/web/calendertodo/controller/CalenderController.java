@@ -1,6 +1,7 @@
 package app.web.calendertodo.controller;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +19,19 @@ public class CalenderController {
 	@Autowired
 	private CalenderView calenderView;
 
-	@RequestMapping(value = "/calender", method = RequestMethod.GET)
-	public String calenderTop(Model model) {
+	private int currentYear;
+	private int currentMonth;
+
+
+	@RequestMapping(value = "/calendar", method = RequestMethod.GET)
+	public String calendarTop(Model model) {
 
 		DateDataModel dataModel = new DateDataModel();
+		currentYear = Calendar.getInstance().get(Calendar.YEAR);
+		currentMonth = Calendar.getInstance().get(Calendar.MONTH);
 
-		List<ArrayList<DateDataModel>> calendar = calenderView.CreateCalendar(2023, 5, dataModel);
+
+		List<ArrayList<DateDataModel>> calendar = calenderView.CreateCalendar(currentYear, currentMonth, dataModel);
 
 		model.addAttribute("dateDataModel", dataModel);
 		model.addAttribute("calendar", calendar);
@@ -31,4 +39,43 @@ public class CalenderController {
 		return "/top";
 	}
 
+	//前月ボタン
+	@RequestMapping(value = "/back", method = RequestMethod.GET)
+	public String calendarBack(Model model) {
+		DateDataModel dataModel = new DateDataModel();
+
+		if (currentMonth == 1) {
+			currentMonth = 12;
+			currentYear--;
+		} else {
+			currentMonth--;
+		}
+
+		List<ArrayList<DateDataModel>> calendar = calenderView.CreateCalendar(currentYear, currentMonth, dataModel);
+
+		model.addAttribute("dateDataModel", dataModel);
+		model.addAttribute("calendar", calendar);
+
+		return "/top";
+	}
+
+	//前月ボタン
+		@RequestMapping(value = "/next", method = RequestMethod.GET)
+		public String calendarNext(Model model) {
+			DateDataModel dataModel = new DateDataModel();
+
+			if (currentMonth == 12) {
+				currentMonth = 1;
+				currentYear++;
+			} else {
+				currentMonth++;
+			}
+
+			List<ArrayList<DateDataModel>> calendar = calenderView.CreateCalendar(currentYear, currentMonth, dataModel);
+
+			model.addAttribute("dateDataModel", dataModel);
+			model.addAttribute("calendar", calendar);
+
+			return "/top";
+		}
 }

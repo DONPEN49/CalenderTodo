@@ -60,16 +60,18 @@ public class CalenderView {
 		calendar.set(year, month, 1);
 	}
 
+	//一日の曜日取得
 	private int getFirstDay() {
 		return calendar.get(Calendar.DAY_OF_WEEK) - 1;
 	}
 
+	//月の最終日取得
 	private int getLastDay() {
 		return calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 	}
 
 	private void calcFields() {
-		calenderMatrix = new int[5][7];
+		calenderMatrix = new int[6][7];
 		int colume = getFirstDay();
 		int row = 0;
 
