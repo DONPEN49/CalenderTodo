@@ -5,17 +5,23 @@
 <!DOCTYPE html>
 <header>
 	<div class="header">
-			<div>
-				<a href="back" class="left_arrow"></a>
-			</div>
-			<div class="date">
-				<h3>
-					<c:out value="${calendarModel.thisYear }年"></c:out>
-					<c:out value="${calendarModel.thisMonth }月"></c:out>
-				</h3>
-			</div>
-			<div>
-				<a href="next" class="right_arrow"></a>
-			</div>
+		<div>
+			<form:form modelAttribute="pageModel">
+				<form:hidden path="toPage" value="back" />
+				<button class="left_arrow" type="submit"></button>
+			</form:form>
+		</div>
+		<div class="date">
+			<h3>
+				<c:out value="${calendarModel.thisYear }年"></c:out>
+				<c:out value="${calendarModel.thisMonth }月"></c:out>
+			</h3>
+		</div>
+		<div>
+			<form:form modelAttribute="pageModel">
+				<form:hidden path="toPage" value="next"/>
+				<button class="right_arrow" type="submit"></button>
+			</form:form>
+		</div>
 	</div>
 </header>
