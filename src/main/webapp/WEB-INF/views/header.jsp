@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <header>
 	<div class="header">
+
 		<div>
 			<form:form modelAttribute="pageModel">
 				<form:hidden path="toPage" value="back" />
@@ -19,7 +20,7 @@
 		</div>
 		<div>
 			<form:form modelAttribute="pageModel">
-				<form:hidden path="toPage" value="next"/>
+				<form:hidden path="toPage" value="next" />
 				<button class="right_arrow" type="submit"></button>
 			</form:form>
 		</div>

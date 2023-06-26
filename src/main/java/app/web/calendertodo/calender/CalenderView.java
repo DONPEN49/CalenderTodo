@@ -4,12 +4,18 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import app.web.calendertodo.dao.FormDAO;
+import app.web.calendertodo.entity.FormDatas;
 import app.web.calendertodo.model.CalendarModel;
 
 @Component
 public class CalenderView {
+
+	@Autowired
+	private FormDAO formDAO;
 
 	private int[][] calenderMatrix;
 	private Calendar calendar;
@@ -32,12 +38,23 @@ public class CalenderView {
 
 		List<ArrayList<CalendarModel>> calenderList = new ArrayList<ArrayList<CalendarModel>>();
 
+		//データベースから予定データ取得
+		List<FormDatas> formDataList = formDAO.getListByDate(year, month + 1);
+
 		//リストに代入
 		for(int y = 0; y < calenderMatrix.length; y++) {
 			ArrayList<CalendarModel> dateList = new ArrayList<CalendarModel>();
 			for(int x = 0; x < calenderMatrix[y].length; x++) {
 				CalendarModel model = new CalendarModel();
 				model.setThisDay(calenderMatrix[y][x]);
+
+				//日付が一致するなら予定データいれる
+				for (FormDatas data : formDataList) {
+					if (data.getDay() == calenderMatrix[y][x]) {
+						model.setTitle(data.getTitle());
+					}
+				}
+
 				if(y == 0) {
 					model.setThisWeek(weeks[x]);
 				}

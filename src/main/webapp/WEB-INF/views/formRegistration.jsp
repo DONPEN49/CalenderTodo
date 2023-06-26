@@ -14,21 +14,21 @@
 		<header>
 			<div class="date">
 				<h3>
-					<c:out value="${calendarModel.thisYear }年"></c:out>
-					<c:out value="${calendarModel.thisMonth }月"></c:out>
+					<c:out value="${sessionScope.pageModel.year }年"></c:out>
+					<c:out value="${sessionScope.pageModel.month }月"></c:out>
 				</h3>
 			</div>
 		</header>
 		<div id="form">
-			<form:form modelAttribute="dateDataModel">
+			<form:form modelAttribute="formDatasModel">
 				<div class="title">
 					<form:input path="title" value="予定を入力してください" />
 				</div>
 				<div class="time">
-					<c:out value="${calendarModel.thisYear }年"></c:out>
-					<c:out value="${calendarModel.thisMonth }月"></c:out>
-					<c:out value="${calendarModel.thisDay }日"></c:out>
-					<input type="time" name="${dateDataModel.thisDate }" value="20:40">
+					<c:out value="${sessionScope.pageModel.year }年"></c:out>
+					<c:out value="${sessionScope.pageModel.month }月"></c:out>
+					<c:out value="${sessionScope.pageModel.day }日"></c:out>
+
 				</div>
 
 

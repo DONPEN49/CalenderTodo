@@ -15,11 +15,22 @@
 							</c:if>
 							<c:if test="${day.thisDay != 0}">
 								<c:out value="${day.thisDay }" />
+								<br>
+							</c:if>
+							<c:if test="${not empty day.title }">
+								<div class="calendartitle">
+									<c:out value="${day.title }" />
+								</div>
+								<form:hidden path="inData" value="${true }" />
+							</c:if>
+							<c:if test="${empty day.title }">
+								<form:hidden path="inData" value="${false }" />
 							</c:if>
 
-							<form:hidden path="date" value="${day.thisDay }" />
+							<form:hidden path="year" value="${calendarModel.thisYear }" />
+							<form:hidden path="month" value="${calendarModel.thisMonth }" />
+							<form:hidden path="day" value="${day.thisDay }" />
 							<form:hidden path="toPage" value="form" />
-
 						</div>
 					</button>
 				</form:form>
@@ -27,4 +38,5 @@
 		</div>
 
 	</c:forEach>
+
 </div>

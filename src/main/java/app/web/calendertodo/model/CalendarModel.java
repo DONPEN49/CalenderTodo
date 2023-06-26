@@ -7,11 +7,12 @@ public class CalendarModel implements Serializable {
 	private int thisMonth;
 	private int thisDay;
 	private String thisWeek;
-	private boolean isInMonth;
+	private String title;
 
 	public int getThisYear() {
 		return thisYear;
 	}
+
 	public void setThisYear(int thisYear) {
 		this.thisYear = thisYear;
 	}
@@ -34,10 +35,10 @@ public class CalendarModel implements Serializable {
 		this.thisWeek = thisWeek;
 	}
 
-	public boolean isInMonth() {
-		return isInMonth;
+	public String getTitle() {
+		return title;
 	}
-	public void setInMonth(boolean isInMonth) {
-		this.isInMonth = isInMonth;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 }

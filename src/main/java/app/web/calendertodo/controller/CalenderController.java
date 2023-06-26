@@ -72,18 +72,21 @@ public class CalenderController {
 			CalendarModel calendarModel = new CalendarModel();
 
 			//指定した年月のカレンダー生成
-			List<ArrayList<CalendarModel>> calendar = calenderView.CreateCalendar(currentYear, currentMonth, calendarModel);
+			List<ArrayList<CalendarModel>> calendar = calenderView.CreateCalendar(currentYear, currentMonth,
+					calendarModel);
 
 			model.addAttribute("calendarModel", calendarModel);
 			model.addAttribute("calendar", calendar);
 
 			return "/top";
 		} else {
+			if (pageModel.isInData()) {
+				return "redirect:/confirm";
+			} else {
+				return "redirect:/regist";
+			}
 
-			return "redirect:/form";
 		}
-
-
 
 	}
 
