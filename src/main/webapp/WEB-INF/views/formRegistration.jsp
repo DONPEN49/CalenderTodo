@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Calendar Todo</title>
-<link rel="stylesheet" href="resources/stylecalender.css">
+<link rel="stylesheet" href="resources/styleregistration.css">
 </head>
 <body>
 	<div class="formdisplay">
@@ -19,24 +19,30 @@
 				</h3>
 			</div>
 		</header>
-		<div id="form">
-			<form:form modelAttribute="formDatasModel">
+		<main>
+			<form:form modelAttribute="formModel">
 				<div class="title">
-					<form:input path="title" value="予定を入力してください" />
+					<form:input path="title" value="タイトル" />
 				</div>
 				<div class="time">
 					<c:out value="${sessionScope.pageModel.year }年"></c:out>
 					<c:out value="${sessionScope.pageModel.month }月"></c:out>
 					<c:out value="${sessionScope.pageModel.day }日"></c:out>
-
+					<form:hidden path="year" value="${sessionScope.pageModel.year }" />
+					<form:hidden path="month" value="${sessionScope.pageModel.month }" />
+					<form:hidden path="day" value="${sessionScope.pageModel.day }" />
+					<form:input path="time" type="time" />
 				</div>
 
 
 				<div class="content">
-					<form:textarea path="content" value="説明を追加" />
+					<form:textarea path="content" rows="5" cols="40" maxlength="300" placeholder="説明を追加"></form:textarea>
 				</div>
+				<button type="submit">登録</button>
 			</form:form>
-		</div>
+		</main>
+		<button type="button" onclick="location.href='calendar'">戻る</button>
 	</div>
+
 </body>
 </html>

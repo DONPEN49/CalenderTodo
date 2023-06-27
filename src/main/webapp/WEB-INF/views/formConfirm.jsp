@@ -26,14 +26,36 @@
 				<div class="formdate">
 					<c:out value="${formdata.day }"></c:out>
 				</div>
+				<div>
+					<c:out value="${formdata.time }"></c:out>
+				</div>
 				<div class="formtitle">
 					<c:out value="${formdata.title }"></c:out>
 				</div>
 				<div class="formcontent">
 					<c:out value="${formdata.content }"></c:out>
 				</div>
-			</c:forEach>
+				<form:form modelAttribute="pageModel">
+					<div>
+						<button type="submit">
+							削除
+							<form:hidden path="toPage" value="delete" />
 
+						</button>
+						<input type="hidden" name="dataid" value="${formdata.dataid }">
+					</div>
+				</form:form>
+
+			</c:forEach>
+			<div>
+				<form:form modelAttribute="pageModel">
+					<button type="submit">
+						追加
+						<form:hidden path="toPage" value="add" />
+					</button>
+				</form:form>
+			</div>
+			<button type="button" onclick="location.href='calendar'">戻る</button>
 		</main>
 	</div>
 

@@ -8,30 +8,37 @@
 			<c:forEach var="day" items="${weekList }">
 				<form:form modelAttribute="pageModel">
 					<button class="day" type="submit" id="${day.thisDay }">
-						<div class="content">
-							<c:if test="${not empty day.thisWeek }">
+
+						<c:if test="${not empty day.thisWeek }">
+							<div class="weeks">
 								<c:out value="${day.thisWeek }" />
 								<br>
-							</c:if>
-							<c:if test="${day.thisDay != 0}">
+							</div>
+						</c:if>
+
+
+						<c:if test="${day.thisDay != 0}">
+							<div class="days">
 								<c:out value="${day.thisDay }" />
 								<br>
-							</c:if>
-							<c:if test="${not empty day.title }">
-								<div class="calendartitle">
-									<c:out value="${day.title }" />
-								</div>
-								<form:hidden path="inData" value="${true }" />
-							</c:if>
-							<c:if test="${empty day.title }">
-								<form:hidden path="inData" value="${false }" />
-							</c:if>
+							</div>
+						</c:if>
 
-							<form:hidden path="year" value="${calendarModel.thisYear }" />
-							<form:hidden path="month" value="${calendarModel.thisMonth }" />
-							<form:hidden path="day" value="${day.thisDay }" />
-							<form:hidden path="toPage" value="form" />
-						</div>
+						<c:if test="${not empty day.title }">
+							<div class="calendartitle">
+								<c:out value="${day.title }" />
+							</div>
+							<form:hidden path="inData" value="${true }" />
+						</c:if>
+						<c:if test="${empty day.title }">
+							<form:hidden path="inData" value="${false }" />
+						</c:if>
+
+						<form:hidden path="year" value="${calendarModel.thisYear }" />
+						<form:hidden path="month" value="${calendarModel.thisMonth }" />
+						<form:hidden path="day" value="${day.thisDay }" />
+						<form:hidden path="toPage" value="form" />
+
 					</button>
 				</form:form>
 			</c:forEach>

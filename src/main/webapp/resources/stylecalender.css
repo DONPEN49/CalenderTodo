@@ -97,15 +97,8 @@ main {
 	grid-template-rows: 70px;
 }
 
-.date {
-
-}
 
 /*** カレンダー ***/
-#container {
-
-}
-
 .calendar {
 	display: inline-block;
 }
@@ -116,26 +109,22 @@ main {
 	grid-template-rows: 100px;
 }
 
+.weeks {
+	vertical-align: text-top;
+
+}
+
 .day {
+	display: grid;
+	grid-template-rows: 20px 20px 20px;
 	margin: auto;
 	width: 100px;
 	height: 100px;
-}
 
-.content:nth-child(odd) {
-	background-color: #cccccc;
-}
-
-.content:nth-child(even) {
-	background-color: #dfdfdf;
 }
 
 .day:hover {
 	background-color: rgba(180, 180, 180, 1);
-}
-
-.content {
-	padding-bottom: 50px;
 }
 
 .calendartitle {
@@ -159,21 +148,3 @@ main {
 	background-color: #dfdfdf;
 }
 **/
-
-/***フォーム ***/
-.formdisplay {
-	display: grid-inline;
-	margin: auto;
-}
-
-#form {
-
-}
-
-.title {
-	display: grid;
-}
-
-.content {
-	display: grid;
-}
