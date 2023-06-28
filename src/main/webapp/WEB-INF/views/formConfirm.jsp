@@ -7,57 +7,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Calendar ToDo</title>
-<link rel="stylesheet" href="resources/stylecalender.css">
+<link rel="stylesheet" href="resources/styleconfirm.css">
 </head>
 <body>
-	<div class="formdisplay">
-		<header>
-			<div>
-				<h3>
-					<c:out value="${sessionScope.pageModel.year }年"></c:out>
-					<c:out value="${sessionScope.pageModel.month }月"></c:out>
-					<c:out value="${sessionScope.pageModel.day }日"></c:out>
-				</h3>
-			</div>
-		</header>
+	<div>
+		<jsp:include page="header.jsp"></jsp:include>
+
 		<main>
-			<c:forEach var="formdata" items="${formDatas }">
+			<div class="formdisplay">
 
-				<div class="formdate">
-					<c:out value="${formdata.day }"></c:out>
-				</div>
-				<div>
-					<c:out value="${formdata.time }"></c:out>
-				</div>
-				<div class="formtitle">
-					<c:out value="${formdata.title }"></c:out>
-				</div>
-				<div class="formcontent">
-					<c:out value="${formdata.content }"></c:out>
-				</div>
-				<form:form modelAttribute="pageModel">
-					<div>
-						<button type="submit">
-							削除
-							<form:hidden path="toPage" value="delete" />
+				<c:forEach var="formdata" items="${formDatas }">
 
-						</button>
-						<input type="hidden" name="dataid" value="${formdata.dataid }">
+					<div class="formdate">
+						<c:out value="${formdata.day }日"></c:out>
 					</div>
-				</form:form>
+					<div class="time">
+						<c:out value="${formdata.time }"></c:out>
+					</div>
+					<div class="formtitle">
+						<c:out value="${formdata.title }"></c:out>
+					</div>
+					<div class="formcontent">
+						<c:out value="${formdata.content }"></c:out>
+					</div>
+					<div class="delete">
+						<form:form modelAttribute="pageModel">
 
-			</c:forEach>
-			<div>
-				<form:form modelAttribute="pageModel">
-					<button type="submit">
-						追加
-						<form:hidden path="toPage" value="add" />
-					</button>
-				</form:form>
+							<button class="button-delete"  type="submit">
+								削除
+								<form:hidden path="toPage" value="delete" />
+							</button>
+							<input type="hidden" name="dataid" value="${formdata.dataid }">
+
+						</form:form>
+					</div>
+				</c:forEach>
+				<div class="add">
+					<form:form modelAttribute="pageModel">
+						<button class="button-add" type="submit">
+							追加
+							<form:hidden path="toPage" value="add" />
+						</button>
+					</form:form>
+				</div>
+				<div class="back">
+					<button class="button-back" type="button" onclick="location.href='calendar'">戻る</button>
+				</div>
 			</div>
-			<button type="button" onclick="location.href='calendar'">戻る</button>
 		</main>
 	</div>
-
 </body>
 </html>

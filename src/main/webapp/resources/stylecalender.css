@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 body {
-	background-color: white;
-	font-family: 'Lato', sans-serif;
+	background-color: #f4f4f4;
+	font-family:'ＭＳ Ｐゴシック', 'Hiragino Kaku Gothic ProN', sans-serif;
 }
 
 header {
-	text-align: center;
+
 }
 
 main {
@@ -16,16 +16,29 @@ main {
 }
 
 /*** ヘッダー ***/
+.header {
+	font-size: 24px;
+}
+
 .logo {
-	display: block;
+
+}
+
+.headerdate {
+	display: inline-grid;
+	grid-template-columns: 30px 200px 30px;
+	grid-template-rows: 70px;
 }
 
 .right_arrow {
+	grid-column: 1;
+	grid-row: 1;
 	position: relative;
 	padding-left: 30px;
 	padding-bottom: 30px;
 	border: none;
-	background: white;
+	background: #f4f4f4;
+	position: relative;
 }
 
 .right_arrow::before { /* 背景の表示設定 */
@@ -56,11 +69,13 @@ main {
 }
 
 .left_arrow {
+	grid-column: 3;
+	grid-row: 1;
 	position: relative;
 	padding-left: 30px;
 	padding-bottom: 30px;
 	border: none;
-	background: white;
+	background: #f4f4f4;
 }
 
 .left_arrow::before { /* 背景の表示設定 */
@@ -91,16 +106,19 @@ main {
 	transform: rotate(225deg);
 }
 
-.header {
-	display: inline-grid;
-	grid-template-columns: 30px 200px 30px;
-	grid-template-rows: 70px;
+.date {
+	grid-column: 2;
+	grid-row: 1;
 }
 
-
 /*** カレンダー ***/
+#container {
+
+}
+
 .calendar {
-	display: inline-block;
+	display: block;
+	padding-left: 200px;
 }
 
 .week {
@@ -111,7 +129,6 @@ main {
 
 .weeks {
 	vertical-align: text-top;
-
 }
 
 .day {
@@ -120,7 +137,6 @@ main {
 	margin: auto;
 	width: 100px;
 	height: 100px;
-
 }
 
 .day:hover {

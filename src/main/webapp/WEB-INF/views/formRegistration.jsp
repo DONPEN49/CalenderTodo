@@ -10,22 +10,15 @@
 <link rel="stylesheet" href="resources/styleregistration.css">
 </head>
 <body>
-	<header>
-		<div class="date">
-			<h3>
-				<c:out value="${sessionScope.pageModel.year }年"></c:out>
-				<c:out value="${sessionScope.pageModel.month }月"></c:out>
-			</h3>
-		</div>
-	</header>
+	<jsp:include page="header.jsp"></jsp:include>
 	<main>
 		<form:form modelAttribute="formModel">
 			<div class="formdisplay">
 				<div class="title">
-					<h3>
-						<form:textarea path="title" rows="3" cols="40" maxlength="100"
-							placeholder="タイトル" />
-					</h3>
+					<h4>
+						<form:textarea path="title" rows="5" cols="40" maxlength="100"
+							placeholder="タイトル" class="form-title" />
+					</h4>
 				</div>
 				<div class="time">
 
@@ -45,16 +38,15 @@
 				<div class="content">
 					<h4>
 						<form:textarea path="content" rows="5" cols="40" maxlength="300"
-							placeholder="説明を追加" />
+							placeholder="説明を追加" class="form-content" />
 					</h4>
 				</div>
-
 				<button class="regist" type="submit">保存</button>
-
+				<button class="back" type="button" onclick="location.href='calendar'">戻る</button>
 			</div>
 		</form:form>
 	</main>
-	<button type="button" onclick="location.href='calendar'">戻る</button>
+
 
 
 </body>

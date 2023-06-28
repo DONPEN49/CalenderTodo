@@ -10,9 +10,30 @@
 <link rel="stylesheet" href="resources/stylecalender.css">
 </head>
 <body>
-	<jsp:include page="header.jsp"></jsp:include>
 	<div id="container">
+		<jsp:include page="header.jsp"></jsp:include>
 		<main>
+			<div class="headerdate">
+
+					<form:form modelAttribute="pageModel">
+						<form:hidden path="toPage" value="back" />
+						<button class="left_arrow" type="submit"></button>
+					</form:form>
+
+				<div class="date">
+					<h3>
+						<c:out value="${calendarModel.thisYear }年"></c:out>
+						<c:out value="${calendarModel.thisMonth }月"></c:out>
+					</h3>
+				</div>
+
+					<form:form modelAttribute="pageModel">
+						<form:hidden path="toPage" value="next" />
+						<button class="right_arrow" type="submit"></button>
+					</form:form>
+
+			</div>
+
 			<jsp:include page="calender.jsp" />
 		</main>
 	</div>
