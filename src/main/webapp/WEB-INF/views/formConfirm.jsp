@@ -19,7 +19,7 @@
 				<c:forEach var="formdata" items="${formDatas }">
 
 					<div class="formdate">
-						⏱　<c:out value="${formdata.day }日"></c:out>
+						⏲　<c:out value="${formdata.day }日"></c:out>
 					</div>
 					<div class="time">
 						<c:out value="${formdata.time }"></c:out>
