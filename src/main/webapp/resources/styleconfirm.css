@@ -27,14 +27,17 @@ main {
 
 .formdate {
 	grid-column: 4/8;
-	grid-row: 1/2;
+	grid-row: 2;
 	background: rgba(235, 235, 235, 1);
+	padding-left: 100px;
+
 }
 
 .formtitle {
 	grid-column: 4/12;
-	grid-row: 2/3;
+	grid-row: 1/2;
 	background: rgba(235, 235, 235, 1);
+	padding-top: 10px;
 }
 
 .formcontent {
@@ -42,12 +45,15 @@ main {
 	grid-column: 4/12;
 	grid-row: 3/5;
 	background: rgba(235, 235, 235, 1);
+	padding-top: 10px;
 }
 
 .time {
 	grid-column: 8/12;
-	grid-row: 1/2;
+	grid-row: 2;
 	background: rgba(235, 235, 235, 1);
+	padding-right: 200px;
+	padding-top: 5px;
 }
 
 .delete {

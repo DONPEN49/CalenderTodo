@@ -28,10 +28,7 @@
 					<form:hidden path="year" value="${sessionScope.pageModel.year }" />
 					<form:hidden path="month" value="${sessionScope.pageModel.month }" />
 					<form:hidden path="day" value="${sessionScope.pageModel.day }" />
-					<br>
-
-
-					<form:input path="time" type="time" />
+					<form:input path="time" type="time" value="00:00" />
 				</div>
 
 

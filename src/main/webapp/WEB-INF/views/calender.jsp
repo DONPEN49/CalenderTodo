@@ -11,7 +11,15 @@
 						<button class="day" type="submit" id="${day.thisDay }">
 							<c:if test="${not empty day.thisWeek }">
 								<div class="weeks">
-									<c:out value="${day.thisWeek }" />
+									<c:if test="${day.thisWeek == \"日\" }">
+										<font color="red"><c:out value="${day.thisWeek }" /></font>
+									</c:if>
+									<c:if test="${day.thisWeek == \"土\" }">
+										<font color="blue"><c:out value="${day.thisWeek }" /></font>
+									</c:if>
+									<c:if test="${day.thisWeek != \"日\" && day.thisWeek != \"土\"}">
+										<c:out value="${day.thisWeek }" />
+									</c:if>
 									<br>
 								</div>
 							</c:if>

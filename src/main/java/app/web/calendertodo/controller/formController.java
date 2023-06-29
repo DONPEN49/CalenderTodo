@@ -1,5 +1,6 @@
 package app.web.calendertodo.controller;
 
+import java.sql.Time;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -54,6 +55,10 @@ public class formController {
 		PageModel pageModel = (PageModel) session.getAttribute("pageModel");
 		List<FormDatas> formDataList = formDAO.getListByDate(pageModel.getYear(), pageModel.getMonth(),
 				pageModel.getDay());
+
+		for (FormDatas formDatas : formDataList) {
+			Time time = formDatas.getTime();
+		}
 
 		model.addAttribute("formDatas", formDataList);
 

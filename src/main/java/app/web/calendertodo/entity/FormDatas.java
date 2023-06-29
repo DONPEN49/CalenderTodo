@@ -16,9 +16,6 @@ public class FormDatas implements Serializable {
 
 	public static java.sql.Time parseDate(String stringDate) {
 		try {
-
-			//return java.sql.Time.valueOf(stringDate);
-
 			java.util.Date date = dateFormat.parse(stringDate);
 			long time = date.getTime();
 			return new java.sql.Time(time);

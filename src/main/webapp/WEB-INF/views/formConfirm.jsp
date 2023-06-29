@@ -19,7 +19,7 @@
 				<c:forEach var="formdata" items="${formDatas }">
 
 					<div class="formdate">
-						<c:out value="${formdata.day }日"></c:out>
+						⏱　<c:out value="${formdata.day }日"></c:out>
 					</div>
 					<div class="time">
 						<c:out value="${formdata.time }"></c:out>
@@ -42,14 +42,6 @@
 						</form:form>
 					</div>
 				</c:forEach>
-				<div class="add">
-					<form:form modelAttribute="pageModel">
-						<button class="button-add" type="submit">
-							追加
-							<form:hidden path="toPage" value="add" />
-						</button>
-					</form:form>
-				</div>
 				<div class="back">
 					<button class="button-back" type="button" onclick="location.href='calendar'">戻る</button>
 				</div>
